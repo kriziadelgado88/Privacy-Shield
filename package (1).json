@@ -1,0 +1,13 @@
+{
+  "name": "privacy-shield",
+  "version": "1.0.0",
+  "description": "PII Scanner for Join39 agents — scan text for personal information before sharing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

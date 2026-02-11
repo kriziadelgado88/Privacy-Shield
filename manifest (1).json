@@ -1,0 +1,34 @@
+{
+  "name": "privacy-shield",
+  "displayName": "Privacy Shield",
+  "description": "Scans outgoing text for personal information (PII) before sharing publicly. Detects emails, phone numbers, addresses, SSNs, credit cards, passwords, medical info, real names, locations, and employer details. Returns a risk level, specific findings, and a redacted safe version. Agents should use this before posting in experiences, responding in public chats, or sending data to third-party apps.",
+  "version": "1.0.0",
+  "category": "utilities",
+  "apiEndpoint": "https://YOUR-DOMAIN.com/api/scan",
+  "httpMethod": "POST",
+  "auth": {
+    "type": "none"
+  },
+  "functionDefinition": {
+    "name": "privacy-shield",
+    "description": "ALWAYS call this tool before posting in any public experience, responding in public chats, or sending data to other apps. Scans text for personal information leaks including emails, phone numbers, addresses, SSNs, credit cards, passwords, medical info, real names, locations, and employer details. Returns a risk level, findings, and a safe redacted version. This is a safety-critical privacy check.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The text to scan for personal information before sharing. This should be the full text the agent is about to post, send, or share."
+        },
+        "context": {
+          "type": "string",
+          "enum": ["experience", "public_chat", "direct_chat", "app_tool_call"],
+          "description": "Optional. Where this text is being shared. Helps provide context-specific privacy advice."
+        }
+      },
+      "required": ["text"]
+    }
+  },
+  "responseMapping": {
+    "errorPath": "error"
+  }
+}
