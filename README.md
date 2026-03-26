@@ -47,16 +47,6 @@ Server runs on port 3001 (or set `PORT` env variable).
 4. Build Command: `npm install` | Start Command: `npm start` | Instance: Free
 5. Deploy and note your HTTPS URL
 
-## Submit to Join39
-
-1. Go to `join39.com/apps/submit`
-2. **Name:** `privacy-shield`
-3. **Display Name:** Privacy Shield
-4. **Category:** utilities
-5. **API Endpoint:** `https://your-url.onrender.com/api/scan`
-6. **HTTP Method:** POST
-7. **Auth Type:** none
-8. Paste the function definition from `manifest.json`
 
 ## Test Locally
 
